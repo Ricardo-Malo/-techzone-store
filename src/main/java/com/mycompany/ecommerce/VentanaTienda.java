@@ -3,7 +3,10 @@
  */
 
 package com.mycompany.ecommerce;
+<<<<<<< HEAD
 import com.mycompany.database.Conexion;
+=======
+>>>>>>> 172f5809e67458cff122015eff66cd63d76fb935
 import com.mycompany.molde.*;
 import com.mycompany.service.ProductoService;
 import javax.swing.*;
@@ -17,7 +20,10 @@ import java.util.ArrayList;
 public class VentanaTienda {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         Conexion.conectar();
+=======
+>>>>>>> 172f5809e67458cff122015eff66cd63d76fb935
 
         ProductoService service = new ProductoService();
         ArrayList<Productos> productos = service.obtenerProductos();

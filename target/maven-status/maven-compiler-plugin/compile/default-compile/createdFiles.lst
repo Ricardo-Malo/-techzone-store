@@ -7,6 +7,9 @@ com\mycompany\molde\Admin.class
 com\mycompany\molde\Carrito.class
 com\mycompany\molde\Pago.class
 com\mycompany\molde\Usuario.class
+<<<<<<< HEAD
 com\mycompany\database\Conexion.class
+=======
+>>>>>>> 172f5809e67458cff122015eff66cd63d76fb935
 com\mycompany\molde\Cliente.class
 com\mycompany\molde\PagoTarjeta.class

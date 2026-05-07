@@ -5,6 +5,7 @@
     <artifactId>Ecommerce</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+<<<<<<< HEAD
     
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,4 +21,11 @@
     </dependency>
 </dependencies>
 
+=======
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>24</maven.compiler.release>
+        <exec.mainClass>com.mycompany.ecommerce.VentanaTienda</exec.mainClass>
+    </properties>
+>>>>>>> 172f5809e67458cff122015eff66cd63d76fb935
 </project>
