@@ -1,5 +1,5 @@
 package com.mycompany.database;
-
+import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -52,7 +52,8 @@ public class Conexion {
 
         System.out.println("Error creando tabla: " + e.getMessage());
     }
-}   public static void insertarProducto(String nombre, double precio) {
+}  
+    public static void insertarProducto(String nombre, double precio) {
 
     String sql = "INSERT OR IGNORE INTO productos(nombre, precio) VALUES(?, ?)";
     
@@ -71,6 +72,51 @@ public class Conexion {
     } catch (Exception e) {
 
         System.out.println("Error insertando producto: " + e.getMessage());
+
+    }
+    }
+    
+        public static void eliminarProducto(String nombre) {
+
+    String sql = "DELETE FROM productos WHERE nombre = ?";
+
+    try (
+        java.sql.Connection conexion = conectar();
+        java.sql.PreparedStatement pstmt = conexion.prepareStatement(sql)
+    ) {
+
+        pstmt.setString(1, nombre);
+
+        pstmt.executeUpdate();
+
+        System.out.println("Producto eliminado");
+
+    } catch (Exception e) {
+
+        System.out.println("Error eliminando producto: " + e.getMessage());
+
+    }
+}public static void actualizarPrecio(String nombre, double nuevoPrecio) {
+
+    String sql = "UPDATE productos SET precio = ? WHERE nombre = ?";
+
+    try (
+
+        java.sql.Connection conexion = conectar();
+        java.sql.PreparedStatement pstmt = conexion.prepareStatement(sql)
+
+    ) {
+
+        pstmt.setDouble(1, nuevoPrecio);
+        pstmt.setString(2, nombre);
+
+        pstmt.executeUpdate();
+
+        System.out.println("Producto actualizado");
+
+    } catch (Exception e) {
+
+        System.out.println("Error actualizando producto: " + e.getMessage());
 
     }
 }
