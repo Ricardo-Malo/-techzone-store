@@ -26,7 +26,7 @@ Conexion.insertarProducto("Llavero Dragon Ball", 10);
     ArrayList<Productos> productos = service.obtenerProductos();
       
        
-        Carrito carrito = new Carrito();
+        final Carrito[] carrito = { new Carrito() };
 
         JFrame ventana = new JFrame("OtakuStore 🎌");
         ventana.setSize(400, 500);
@@ -57,9 +57,9 @@ Conexion.insertarProducto("Llavero Dragon Ball", 10);
             btn.setBounds(80, y, 220, 30);
 
             btn.addActionListener(e -> {
-                carrito.agregar(p);
-                area.setText(carrito.mostrar());
-                total.setText("Total: $" + carrito.total());
+                carrito[0].agregar(p);
+                area.setText(carrito[0].mostrar());
+                total.setText("Total: $" + carrito[0].total());
             });
 
             panel.add(btn);
@@ -70,14 +70,27 @@ Conexion.insertarProducto("Llavero Dragon Ball", 10);
         pagar.setBounds(120, 420, 150, 30);
 
         pagar.addActionListener(e -> {
-            Pago pago = new PagoTarjeta();
-            Pedido pedido = new Pedido(carrito.mostrar(), carrito.total());
 
-            JOptionPane.showMessageDialog(null,
-                    pago.pagar(carrito.total()) + "\n\n" + pedido.mostrarPedido()
-            );
-        });
+        JOptionPane.showMessageDialog(null, "Compra realizada con éxito 🛒");
 
+        
+
+        area.setText("");
+
+        total.setText("Total: $0");
+
+        Pago pago = new PagoTarjeta();
+
+     Pedido pedido = new Pedido(carrito[0].mostrar(), carrito[0].total());
+
+        JOptionPane.showMessageDialog(null,
+            pago.pagar(carrito[0].total()) + "\n\n" + pedido.mostrarPedido()
+        );
+          carrito[0] = new Carrito();
+          area.setText("");
+
+        total.setText("Total: $0");
+});
         panel.add(pagar);
 
         ventana.add(panel);
