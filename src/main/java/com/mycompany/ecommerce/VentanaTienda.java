@@ -13,9 +13,19 @@ public class VentanaTienda {
     public static void main(String[] args) {
 
         Conexion.conectar();
-        ProductoService service = new ProductoService();
-        ArrayList<Productos> productos = service.obtenerProductos();
 
+Conexion.crearTabla();
+
+Conexion.insertarProducto("Figura Naruto", 50);
+Conexion.insertarProducto("Manga One Piece", 20);
+Conexion.insertarProducto("Cosplay Nezuko", 80);
+Conexion.insertarProducto("Camiseta Anime", 35);
+Conexion.insertarProducto("Llavero Dragon Ball", 10);
+
+    ProductoService service = new ProductoService();
+    ArrayList<Productos> productos = service.obtenerProductos();
+      
+       
         Carrito carrito = new Carrito();
 
         JFrame ventana = new JFrame("OtakuStore 🎌");
