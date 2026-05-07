@@ -35,11 +35,11 @@ public class Conexion {
     Conexion.insertarProducto("Camiseta Anime", 35);
     Conexion.insertarProducto("Llavero Dragon Ball", 10);
 
-    String sql = "CREATE TABLE IF NOT EXISTS productos ("
-            + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + "nombre TEXT NOT NULL,"
-            + "precio REAL NOT NULL"
-            + ");";
+   String sql = "CREATE TABLE IF NOT EXISTS productos ("
+        + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        + "nombre TEXT UNIQUE NOT NULL,"
+        + "precio REAL NOT NULL"
+        + ");";
 
     try (Connection conexion = conectar();
          Statement stmt = conexion.createStatement()) {
@@ -54,8 +54,8 @@ public class Conexion {
     }
 }   public static void insertarProducto(String nombre, double precio) {
 
-    String sql = "INSERT INTO productos(nombre, precio) VALUES(?, ?)";
-
+    String sql = "INSERT OR IGNORE INTO productos(nombre, precio) VALUES(?, ?)";
+    
     try (
         Connection conexion = conectar();
         java.sql.PreparedStatement pstmt = conexion.prepareStatement(sql)
