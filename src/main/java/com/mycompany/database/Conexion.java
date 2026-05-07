@@ -12,12 +12,14 @@ public class Conexion {
     public static Connection conectar() {
 
         try {
+            
+            Class.forName("org.sqlite.JDBC");
             Connection conexion = DriverManager.getConnection(URL);
             System.out.println("Conexion exitosa a SQLite");
 
             return conexion;
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
 
             System.out.println("Error de conexion: " + e.getMessage());
 
@@ -26,6 +28,12 @@ public class Conexion {
         }
     }
     public static void crearTabla() {
+        
+    Conexion.insertarProducto("Figura Naruto", 50);
+    Conexion.insertarProducto("Manga One Piece", 20);
+    Conexion.insertarProducto("Cosplay Nezuko", 80);
+    Conexion.insertarProducto("Camiseta Anime", 35);
+    Conexion.insertarProducto("Llavero Dragon Ball", 10);
 
     String sql = "CREATE TABLE IF NOT EXISTS productos ("
             + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -44,5 +52,26 @@ public class Conexion {
 
         System.out.println("Error creando tabla: " + e.getMessage());
     }
-}   
+}   public static void insertarProducto(String nombre, double precio) {
+
+    String sql = "INSERT INTO productos(nombre, precio) VALUES(?, ?)";
+
+    try (
+        Connection conexion = conectar();
+        java.sql.PreparedStatement pstmt = conexion.prepareStatement(sql)
+    ) {
+
+        pstmt.setString(1, nombre);
+        pstmt.setDouble(2, precio);
+
+        pstmt.executeUpdate();
+
+        System.out.println("Producto guardado");
+
+    } catch (Exception e) {
+
+        System.out.println("Error insertando producto: " + e.getMessage());
+
+    }
+}
 }

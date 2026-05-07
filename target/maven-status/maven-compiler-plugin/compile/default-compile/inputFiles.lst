@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\database\Conexion.java
 C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\ecommerce\VentanaTienda.java
 C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Admin.java
@@ -11,16 +10,3 @@ C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\com\mycompa
 C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Usuario.java
 C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\service\ProductoService.java
 C:\Users\WinterOS\Documents\NetBeansProjects\Ecommerce\src\main\java\Pago.java
-=======
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\ecommerce\VentanaTienda.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Admin.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Carrito.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Cliente.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Pago.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\PagoTarjeta.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Pedido.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Productos.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\molde\Usuario.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\com\mycompany\service\ProductoService.java
-C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Ecommerce\src\main\java\Pago.java
->>>>>>> 172f5809e67458cff122015eff66cd63d76fb935
