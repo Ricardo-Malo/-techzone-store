@@ -139,9 +139,14 @@ public class VentanaTienda {
             total.setText("Total: $0");
             Pago pago = new PagoTarjeta();
             Pedido pedido = new Pedido(carrito[0].mostrar(), carrito[0].total());
-            JOptionPane.showMessageDialog(null,
-                    pago.pagar(carrito[0].total()) + "\n\n" + pedido.mostrarPedido()
-            );
+            String factura
+                    = "===== FACTURA OTAKU STORE =====\n\n"
+                    + pedido.mostrarPedido()
+                    + "\n\nMetodo de pago: Tarjeta 💳"
+                    + "\n\nGracias por su compra 😎";
+
+            JOptionPane.showMessageDialog(null, factura);
+             
             carrito[0] = new Carrito();
             area.setText("");
 
