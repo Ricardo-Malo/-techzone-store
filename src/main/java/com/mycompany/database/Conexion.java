@@ -78,7 +78,7 @@ public class Conexion {
     
         public static void eliminarProducto(String nombre) {
 
-    String sql = "DELETE FROM productos WHERE nombre = ?";
+    String sql = "DELETE FROM productos WHERE LOWER(nombre) = LOWER(?)";
 
     try (
         java.sql.Connection conexion = conectar();
